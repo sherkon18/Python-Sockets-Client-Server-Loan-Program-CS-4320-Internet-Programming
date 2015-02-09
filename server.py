@@ -132,7 +132,7 @@ def calculate_payment(initial_balance, rate, number_of_months):
     if initial_balance <= 1E-10:
         print('+--error: wrong amount of initial balance (must be > 0)--+')
         return '+--Einvalid or unexpected month parameter--+'
-    if rate <= 1E-100:
+    if rate <= 1E-10:
         print('+--error: wrong format for rate (must be > 0)--+')
         return '+--Einvalid or unexpected rate parameter--+'
     if number_of_months <= 1E-10:
