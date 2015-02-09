@@ -34,35 +34,19 @@ The response to the example balance request would be2
     B-3.296918293926865e-11
 Server Error Checking
 
-The server should respond properly in the case of an erroneous request. Not only should the server not ‘crash’ but the server should send back an appropriate error response to the client.
+The server responds properly in the case of an erroneous request.
 
-For example, the request string
 
-    P10000 .10 24a
-should result in a response something like this:
-
-    Einvalid format numeric data
-Note the ‘E’ that flags this as an error message.
-
-Include error checking in the server. Also document the error checking by including a string at the end of the server code that describes the errors caught. That string might look something like this (to start with):
-
-'''
-Invalid numeric format
-
-Wrong number of fields in request
-
-'''
 Client
 
-You are strongly urged to write small clients that will test aspects of your server as you work on that. Once you are satisfied that you can send a payment request and get a good result and also send a balance request and get a good result then work on the client described here.
+The client script will accept three command line arguments: the initial balance; the annual interest rate as a percentage; and, the number of months in the term of the loan. 
 
-The client script will accept three command line arguments: the initial balance; the annual interest rate as a percentage; and, the number of months in the term of the loan. So, if your script is named loan_client.py, it might be invoked from the command line as
-
+Example:
 loan_client.py  10000  10 12
+
 for a loan with an initial balance of $10,000 borrowed at an annual rate of 10% due in 12 months.
 
 The client will send a payment request to the server with the given input parameters. Then, the client will take the payment amount and send to the server a balance request where the month number is one more than the term of the loan. The client should print the payment amount (suitably labeled) formatted to two decimal places. The client should print the balance amount (suitably labeled) as received.
 
 Note that, with sane input, the balance printed should be very close to 0.
 
-If either response to the client is an error, the client should print the error message and immediately halt.
