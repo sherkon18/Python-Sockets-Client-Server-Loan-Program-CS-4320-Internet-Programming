@@ -24,7 +24,7 @@ def main():
         sock.send(str.encode(request))
 
         response = sock.recv(1024)
-
+        
         response = bytes.decode(response)
 
         if response.startswith('P'):
