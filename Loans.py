@@ -1,16 +1,7 @@
-#!/usr/bin/env python3
-
-'''
-#Name: Edward Mwangi
-#Class: CS 4320
-#Assignment 2
-'''
-
 __author__ = 'Edward Mwangi'
 
 
 '''
-
 :formula --> Monthly = initial_balance * (1+rate)^n * rate / [(1+rate)^n -1]
 :where rate = percentage / 1200
 :argument: annualRate --> Percentage
