@@ -1,4 +1,4 @@
-__author__ = 'Edward M.'
+__author__ = 'Teddy'
 
 import socket
 import sys
